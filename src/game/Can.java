@@ -1,7 +1,10 @@
 package game;
 
 public class Can {
-    private int capacity;
+
+    // chip size
+    final int canSize = 10;
+
     private int chipCount;
     private char[] chipStack;
     private int luckyChip;
@@ -14,16 +17,16 @@ public class Can {
         // default size & default count
         // allow for resizing
 
-        capacity = 30;
         chipCount = 0;
-        chipStack = new char[capacity];
+        chipStack = new char[canSize];
 
-        for (int i = 0; i < capacity; i++) {
+        for (int i = 0; i < canSize; i++) {
             this.push('c');
         } 
 
         // find the "lucky chip" to replace with the pickle chip.
-        chipStack[(int)(Math.random() * 5)] = 'p';
+        luckyChip = (int)(Math.random() * 5);
+        chipStack[luckyChip] = 'p';
     }
 
     public char pop() {
@@ -83,7 +86,7 @@ public class Can {
 
     public String checkDistance() {
         // this seems to be currently checking for the distance from the bottom of the stack ?
-        int distance = chipCount - (luckyChip + 1);
+        int distance = chipCount - (luckyChip);
 
         if (distance > 20) 
             return "over 20 chips away.";

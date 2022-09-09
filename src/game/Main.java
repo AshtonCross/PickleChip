@@ -1,3 +1,7 @@
+// Written by Ashton Cross
+// ashton.ccross@gmail.com
+// GPL 3.0 (not necessary for me to pick a license, but why not)
+
 // This is a little stack hack i made for no real good reason
 // the idea behind this game is that you try to make it so your opponant 
 // grabs the pickle chip instead of you.
@@ -43,6 +47,7 @@ public class Main {
             // player x turn (options: eat 3, eat 2, shuffle and eat 1)
             System.out.println("Turn " + turn);
             System.out.println("Chip " + chipCan.checkDistance());
+            System.out.println(chipCan.getChipCount() + " chips remain.");
             System.out.println(player);
             System.out.println("Possible options:" + 
                             "\n 2 - eat top two chips" + 
