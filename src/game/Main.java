@@ -20,6 +20,8 @@
 // it's pretty much a gambling game i think
 // i haven't written this game yet so i don't know if it will be fun.
 
+// 9/9/22 hello from gnu/linux!
+
 // TODO : Make this game fun. 
 
 package game;

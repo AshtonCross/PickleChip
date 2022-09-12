@@ -3,6 +3,7 @@ package game;
 public class Can {
 
     // chip size
+	// must be bigger than 5 or risk out of bounds error
     final int canSize = 10;
 
     private int chipCount;
@@ -75,10 +76,18 @@ public class Can {
             }
         }
 
+	
         if (isPickleChipfound) {
-            // make a random choice
+			// make sure we dont replace chips that are out of bounds
+			int randomChipRange = 3; // default is 0-2
 
-            chipStack[(chipCount - 1) - (int)(Math.random() * 3)] = 'p';
+			if (chipCount <= 3) {
+				randomChipRange = chipCount - 1;
+			}
+			
+			// make a random choice
+			
+            chipStack[(chipCount - 1) - (int)(Math.random() * randomChipRange)] = 'p';
         }
 
         return this.eatChips(1);
